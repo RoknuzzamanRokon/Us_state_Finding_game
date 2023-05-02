@@ -11,9 +11,9 @@ turtle.shape(image)
 data = pandas.read_csv("50_states.csv")
 all_state = data.state.to_list()
 guessed_state = []
+game_is_on = True
 
-
-while len(guessed_state) < 50:
+while len(guessed_state) < 50 and game_is_on:
     user_data = screen.textinput(f"You Guessed:{len(guessed_state)}/50",
                                  "\t\tWrite a US state name\t\t").title()
 
@@ -26,5 +26,8 @@ while len(guessed_state) < 50:
         t.goto(int(state_data.x), int(state_data.y))
         t.write(user_data)
 
-screen.mainloop()
+    elif user_data == "Exit":
+        game_is_on = False
+
+
 
