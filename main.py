@@ -15,7 +15,7 @@ make_list = 0
 
 
 while make_list < 50:
-    display = screen.textinput(title=f"Your score:{make_list}/50", prompt="wright a us-stat name.").capitalize()
+    display = screen.textinput(f"Your score:{make_list}/50", "write a us-stat name.").capitalize()
 
     if display in all_state:
         make_list += 1
